@@ -8,7 +8,7 @@ final class MosquitoModel extends Model {
 	private $height;
 	private $mosquito;
 
-	public function __construct(float $width, float $height, string $systemCode, string $clothTypeCode = '') {
+	public function __construct(float $width, float $height, string $systemCode = '', string $clothTypeCode = '') {
 		$this->width = $width;
 		$this->height = $height;
 		$this->mosquito = new Mosquito($systemCode, $clothTypeCode);
@@ -22,14 +22,14 @@ final class MosquitoModel extends Model {
 	}
 
 	/**
-	 * Возвращает ширину рамы
+	 * Возвращает ширину москитной сетки
 	 */
 	public function getWidth(): float {
 		return $this->width;
 	}
 
 	/**
-	 * Устанавливает ширину рамы
+	 * Устанавливает ширину москитной сетки
 	 */
 	public function setWidth(float $value): self {
 		$this->width = $value;
@@ -37,14 +37,14 @@ final class MosquitoModel extends Model {
 	}
 
 	/**
-	 * Возвращает высоту рамы
+	 * Возвращает высоту москитной сетки
 	 */
 	public function getHeight(): float {
 		return $this->height;
 	}
 
 	/**
-	 * Устанавливает высоту рамы
+	 * Устанавливает высоту москитной сетки
 	 */
 	public function setHeight(float $value): self {
 		$this->height = $value;

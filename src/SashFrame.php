@@ -70,7 +70,7 @@ final class SashFrame extends Inset implements SashFrameInterface, UserParameter
 	 *
 	 * Добавляет москитную сетку и возвращает её
 	 */
-	public function addMosquito(string $systemCode): Mosquito {
+	public function addMosquito(string $systemCode = ''): Mosquito {
 		$this->mosquito = new Mosquito($systemCode);
 		return $this->mosquito;
 	}

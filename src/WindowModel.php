@@ -8,7 +8,7 @@ final class WindowModel extends Model {
 	private $height;
 	private $frame;
 
-	public function __construct(float $width, float $height, string $itemTypeCode) {
+	public function __construct(float $width, float $height, string $itemTypeCode = '') {
 		$this->width = $width;
 		$this->height = $height;
 		$this->frame = new WindowFrame($itemTypeCode);

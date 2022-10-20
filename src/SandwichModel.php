@@ -8,7 +8,7 @@ final class SandwichModel extends Model {
 	private $height;
 	private $aperture;
 
-	public function __construct(float $width, float $height, string $marking) {
+	public function __construct(float $width, float $height, string $marking = '') {
 		$this->width = $width;
 		$this->height = $height;
 
@@ -27,14 +27,14 @@ final class SandwichModel extends Model {
 	}
 
 	/**
-	 * Возвращает ширину рамы
+	 * Возвращает ширину сэндвича
 	 */
 	public function getWidth(): float {
 		return $this->width;
 	}
 
 	/**
-	 * Устанавливает ширину рамы
+	 * Устанавливает ширину сэндвича
 	 */
 	public function setWidth(float $value): self {
 		$this->width = $value;
@@ -42,14 +42,14 @@ final class SandwichModel extends Model {
 	}
 
 	/**
-	 * Возвращает высоту рамы
+	 * Возвращает высоту сэндвича
 	 */
 	public function getHeight(): float {
 		return $this->height;
 	}
 
 	/**
-	 * Устанавливает высоту рамы
+	 * Устанавливает высоту сэндвича
 	 */
 	public function setHeight(float $value): self {
 		$this->height = $value;

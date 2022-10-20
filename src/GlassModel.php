@@ -8,7 +8,7 @@ final class GlassModel extends Model {
 	private $height;
 	private $aperture;
 
-	public function __construct(float $width, float $height, string $marking) {
+	public function __construct(float $width, float $height, string $marking = '') {
 		$this->width = $width;
 		$this->height = $height;
 
@@ -27,14 +27,14 @@ final class GlassModel extends Model {
 	}
 
 	/**
-	 * Возвращает ширину рамы
+	 * Возвращает ширину стеклопакета
 	 */
 	public function getWidth(): float {
 		return $this->width;
 	}
 
 	/**
-	 * Устанавливает ширину рамы
+	 * Устанавливает ширину стеклопакета
 	 */
 	public function setWidth(float $value): self {
 		$this->width = $value;
@@ -42,14 +42,14 @@ final class GlassModel extends Model {
 	}
 
 	/**
-	 * Возвращает высоту рамы
+	 * Возвращает высоту стеклопакета
 	 */
 	public function getHeight(): float {
 		return $this->height;
 	}
 
 	/**
-	 * Устанавливает высоту рамы
+	 * Устанавливает высоту стеклопакета
 	 */
 	public function setHeight(float $value): self {
 		$this->height = $value;

@@ -18,7 +18,7 @@ class Aperture implements ApertureInterface {
 	 *
 	 * Замещает текущую вставку стеклопакетом и возвращает его
 	 */
-	public function insertGlass(string $marking): GlassUnit {
+	public function insertGlass(string $marking = ''): GlassUnit {
 		$filling = new GlassUnit($this, $marking);
 		$this->inset = $filling;
 		return $filling;
@@ -29,7 +29,7 @@ class Aperture implements ApertureInterface {
 	 *
 	 * Замещает текущую вставку сэндвичем и возвращает его
 	 */
-	public function insertSandwich(string $marking): SandwichPanel {
+	public function insertSandwich(string $marking = ''): SandwichPanel {
 		$filling = new SandwichPanel($this, $marking);
 		$this->inset = $filling;
 		return $filling;
@@ -40,7 +40,7 @@ class Aperture implements ApertureInterface {
 	 *
 	 * Замещает текущую вставку створкой и возвращает её
 	 */
-	public function insertSash(int $openType): SashFrame {
+	public function insertSash(int $openType = SashFrameInterface::None): SashFrame {
 		$sash = new SashFrame($this, $openType);
 		$this->inset = $sash;
 		return $sash;
