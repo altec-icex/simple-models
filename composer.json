@@ -1,9 +1,13 @@
 {
     "name": "altec-icex/simple-models",
     "type": "library",
-    "description": "Window template model",
+    "description": "Window model constructor",
     "keywords": [
         "windows",
+        "doors",
+        "glass units",
+        "sandwich panels",
+        "mosquito nets",
         "template",
         "model"
     ],
