@@ -15,7 +15,7 @@ final class WindowModel extends Model {
 	}
 
 	/**
-	 * Возвращает код типа изделия
+	 * Возвращает раму изделия
 	 */
 	public function getFrame(): WindowFrame {
 		return $this->frame;

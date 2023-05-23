@@ -21,7 +21,7 @@ final class SandwichModel extends Model {
 
 	/**
 	 * Возвращает сэндвич
-	 */		
+	 */
 	public function getSandwich(): SandwichPanel {
 		return $this->aperture->getInset();
 	}

@@ -1,7 +1,7 @@
 <?php namespace SimpleModels;
 
 /**
- * Расширение пользовательских параметров
+ * Интерфейс "держателя" пользовательских параметров
  */
 interface UserParametersHolderInterface {
 	/**

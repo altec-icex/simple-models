@@ -37,14 +37,14 @@ class Mosquito implements UserParametersHolderInterface {
 	/**
 	 * Возвращает код типа полотна москитной сетки
 	 */
-	public function getСlothTypeCode(): string {
+	public function getClothTypeCode(): string {
 		return $this->clothTypeCode;
 	}
 
 	/**
 	 * Устанавливает код типа полотна москитной сетки
 	 */
-	public function setСlothTypeCode(string $value): self {
+	public function setClothTypeCode(string $value): self {
 		$this->clothTypeCode = $value;
 		return $this;
 	}

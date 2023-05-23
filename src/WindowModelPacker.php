@@ -111,7 +111,7 @@ class WindowModelPacker {
 	private function packMosquito(Mosquito $mosquito) {
 		return array(
 			'systemCode' => $mosquito->getSystemCode(),
-			'clothTypeCode' => $mosquito->getСlothTypeCode(),
+			'clothTypeCode' => $mosquito->getClothTypeCode(),
 			'autoFrameCoating' => $mosquito->getAutoFrameCoating(),
 			'frameCoatingCode' => $mosquito->getFrameCoatingCode(),
 			'userParameters' => $this->packUserParameters($mosquito->getUserParameters())

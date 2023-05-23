@@ -33,7 +33,7 @@ class MosquitoModelPacker {
 	private function packMosquito(Mosquito $mosquito) {
 		return array(
 			'systemCode' => $mosquito->getSystemCode(),
-			'clothTypeCode' => $mosquito->getСlothTypeCode(),
+			'clothTypeCode' => $mosquito->getClothTypeCode(),
 			'frameCoatingCode' => $mosquito->getFrameCoatingCode(),
 			'userParameters' => $this->packUserParameters($mosquito->getUserParameters())
 		);
