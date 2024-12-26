@@ -10,6 +10,7 @@ class Mosquito implements UserParametersHolderInterface {
 	use UserParametersTrait;
 
 	private $systemCode = '';
+	private $baseColorCode = '';
 	private $clothTypeCode = '';
 	private $autoFrameCoating = true;
 	private $frameCoatingCode = '';
@@ -31,6 +32,21 @@ class Mosquito implements UserParametersHolderInterface {
 	 */
 	public function setSystemCode(string $value): self {
 		$this->systemCode = $value;
+		return $this;
+	}
+
+	/**
+	 * Возвращает код базового цвета москитной сетки
+	 */
+	public function getBaseColorCode(): string {
+		return $this->baseColorCode;
+	}
+
+	/**
+	 * Устанавливает код базового цвета москитной сетки
+	 */
+	public function setBaseColorCode(string $value): self {
+		$this->baseColorCode = $value;
 		return $this;
 	}
 

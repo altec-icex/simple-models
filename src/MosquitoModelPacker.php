@@ -15,6 +15,22 @@
 //   }
 // }
 
+// {
+//   type: 'mosquito',
+//   version: 2,
+//   model: {
+//     width: 0.0,
+//     height: 0.0,
+//     mosquito: {
+//       systemCode: '',
+//       baseColorCode: '',
+//       clothTypeCode: '',
+//       frameCoatingCode: '',
+//       userParameters: {}
+//     }
+//   }
+// }
+
 /**
  * Класс упаковщика модели москитной сетки
  */
@@ -33,6 +49,7 @@ class MosquitoModelPacker {
 	private function packMosquito(Mosquito $mosquito) {
 		return array(
 			'systemCode' => $mosquito->getSystemCode(),
+			'baseColorCode' => $mosquito->getBaseColorCode(),
 			'clothTypeCode' => $mosquito->getClothTypeCode(),
 			'frameCoatingCode' => $mosquito->getFrameCoatingCode(),
 			'userParameters' => $this->packUserParameters($mosquito->getUserParameters())
@@ -49,7 +66,7 @@ class MosquitoModelPacker {
 
 		$pack = array(
 			'type' => 'mosquito',
-			'version' => 1,
+			'version' => 2,
 			'model' => array(
 				'width' => $model->getWidth(),
 				'height' => $model->getHeight(),
