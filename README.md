@@ -144,6 +144,9 @@ $mosquito = $sash->addMosquito();
 // Устанавливаем систему москитной сетки с кодом "plunger"
 $mosquito->setSystemCode('plunger');
 
+// Устанавливаем базовый цвет москитной сетки с кодом "white"
+$mosquito->setBaseColorCode('white');
+
 // Устанавливаем тип полотна москитной сетки с кодом "antifly"
 $mosquito->setСlothTypeCode('antifly');
 
