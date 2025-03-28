@@ -70,6 +70,82 @@
 //   }
 // }
 
+// {
+//   type: 'window',
+//   version: 2,
+//   model: {
+//     width: 0.0,
+//     height: 0.0,
+//     window: {
+//       itemTypeCode: '',
+//       profileSystemCode: '',
+//       profileBaseCode: '',
+//       hardwareSystemCode: '',
+//       innerCoatingCode: '',
+//       outerCoatingCode: '',
+//       foldCoatingCode: '',
+//       useDoorSill: true|false,
+//       aperture: {
+//         inset: {
+//           type: 'glass|sandwich|sash|impost|stulp',
+//           glass: {
+//             marking: '',
+//             userParameters: {}
+//           },
+//           sandwich: {
+//             marking: '',
+//             autoCoatings: true|false,
+//             innerCoatingCode: '',
+//             outerCoatingCode: '',
+//             userParameters: {}
+//           },
+//           sash: {
+//             openType: 0,
+//             useSocle: true|false,
+//             aperture: {aperture},
+// 	           userParameters: {},
+//             mosquito: {
+//               systemCode: '',
+//               baseColorCode: '',
+//               clothTypeCode: '',
+//               autoFrameCoating: true|false,
+//               frameCoatingCode: '',
+//               autoHingeSide: true|false,
+//               hingeSide: 0,
+//               userParameters: {}
+//             }
+//           },
+//           impost: {
+//             isHorizontal: true|false,
+//             position: 0.0,
+//             leftTopAperture: {aperture}
+//             rightBottomAperture: {aperture}
+//           },
+//           stulp: {
+//             position: 0.0,
+//             isLeft: true|false,
+//             isTiltSash: true|false,
+//             leftSash: {sash},
+//             rightSash: {sash},
+//             mosquito: {
+//               systemCode: '',
+//               baseColorCode: '',
+//               clothTypeCode: '',
+//               autoFrameCoating: true|false,
+//               frameCoatingCode: '',
+//               autoHingeSide: true|false,
+//               hingeSide: 0,
+//               userParameters: {}
+//             },
+//             isWorkSashMosquito: true|false
+//           }
+//         }
+//       },
+//       userParameters: {}
+//     }
+//   }
+// }
+
 /**
  * Класс упаковщика модели окна
  */
@@ -111,9 +187,12 @@ class WindowModelPacker {
 	private function packMosquito(Mosquito $mosquito) {
 		return array(
 			'systemCode' => $mosquito->getSystemCode(),
+			'baseColorCode' => $mosquito->getBaseColorCode(),
 			'clothTypeCode' => $mosquito->getClothTypeCode(),
 			'autoFrameCoating' => $mosquito->getAutoFrameCoating(),
 			'frameCoatingCode' => $mosquito->getFrameCoatingCode(),
+			'autoHingeSide' => $mosquito->getAutoHingeSide(),
+			'hingeSide' => $mosquito->getHingeSide(),
 			'userParameters' => $this->packUserParameters($mosquito->getUserParameters())
 		);
 	}
@@ -268,7 +347,7 @@ class WindowModelPacker {
 
 		$pack = array(
 			'type' => 'window',
-			'version' => 1,
+			'version' => 2,
 			'model' => array(
 				'width' => $model->getWidth(),
 				'height' => $model->getHeight(),

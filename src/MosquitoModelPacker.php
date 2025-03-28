@@ -26,6 +26,7 @@
 //       baseColorCode: '',
 //       clothTypeCode: '',
 //       frameCoatingCode: '',
+//       hingeSide: '',
 //       userParameters: {}
 //     }
 //   }
@@ -52,6 +53,7 @@ class MosquitoModelPacker {
 			'baseColorCode' => $mosquito->getBaseColorCode(),
 			'clothTypeCode' => $mosquito->getClothTypeCode(),
 			'frameCoatingCode' => $mosquito->getFrameCoatingCode(),
+			'hingeSide' => $mosquito->getHingeSide(),
 			'userParameters' => $this->packUserParameters($mosquito->getUserParameters())
 		);
 	}

@@ -67,7 +67,7 @@ composer require altec-icex/simple-models
 Створки, образованные штульпом не имеют собственных типов открывания и москитных сеток.
 
 ### Москитная сетка
-Москитная сетка имеет систему, базовый цвет, тип полотна и покрытие рамки, задаваемые кодами.
+Москитная сетка имеет систему, базовый цвет, тип полотна и покрытие рамки, задаваемые кодами, а также сторону петель.
 
 Есть возможность наследования внешнего покрытия окна для покрытия рамки.
 
@@ -94,7 +94,7 @@ use SimpleModels\SashFrameInterface;
 $model = new WindowModel(1400, 1400);
 
 // Берём раму
-$frame =$model->getFrame();
+$frame = $model->getFrame();
 
 // Устанавливаем тип изделия с кодом "window"
 $frame->setItemTypeCode('window');
@@ -307,6 +307,9 @@ $mosquito->setСlothTypeCode('antifly');
 
 // Устанавливаем покрытие рамки с кодом цвета "RAL7045"
 $mosquito->setFrameCoatingCode('RAL7045');
+
+// Устанавливаем левую сторону для петель
+$mosquito->setHingeSide(1);
 
 // Устанавливаем пользовательский параметр
 $mosquito->setUserParameterValue('crossbar', 1);

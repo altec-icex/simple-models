@@ -9,11 +9,26 @@ class Mosquito implements UserParametersHolderInterface {
 	 */
 	use UserParametersTrait;
 
+	/**
+	 * Сторона петель не указана
+	 */
+	const UnspecifiedSide = 0;
+	/**
+	 * Петли на левой стороне
+	 */
+	const LeftSide = 1;
+	/**
+	 * Петли на правой стороне
+	 */
+	const RightSide = 2;
+
 	private $systemCode = '';
 	private $baseColorCode = '';
 	private $clothTypeCode = '';
 	private $autoFrameCoating = true;
 	private $frameCoatingCode = '';
+	private $autoHingeSide = true;
+	private $hingeSide = Mosquito::UnspecifiedSide;
 
 	public function __construct(string $systemCode, string $clothTypeCode = '') {
 		$this->systemCode = $systemCode;
@@ -92,6 +107,36 @@ class Mosquito implements UserParametersHolderInterface {
 	 */
 	public function setFrameCoatingCode(string $value): self {
 		$this->frameCoatingCode = $value;
+		return $this;
+	}
+
+	/**
+	 * Возвращает признак автоматического выбора стороны петель
+	 */
+	public function getAutoHingeSide(): bool {
+		return $this->autoHingeSide;
+	}
+
+	/**
+	 * Устанавливает признак автоматического выбора стороны петель
+	 */
+	public function setAutoHingeSide(bool $value): self {
+		$this->autoHingeSide = $value;
+		return $this;
+	}
+
+	/**
+	 * Возвращает сторону петель москитной сетки
+	 */
+	public function getHingeSide(): int {
+		return $this->hingeSide;
+	}
+
+	/**
+	 * Устанавливает сторону петель москитной сетки
+	 */
+	public function setHingeSide(int $value): self {
+		$this->hingeSide = $value;
 		return $this;
 	}
 }
